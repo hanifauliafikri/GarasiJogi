@@ -206,14 +206,14 @@ window.addEventListener("scroll", scrollHeader);
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
-  duration: 2500,
-  delay: 400,
+  duration: 1500,
+  delay: 300,
 });
 
 sr.reveal(
   ".home__data, .projects__container, .testimonial__container, .footer__container"
 );
-sr.reveal(".home__info div", { delay: 300, origin: "bottom", interval: 100 });
+sr.reveal(".home__info div", { delay: 100, origin: "bottom", interval: 100 });
 sr.reveal(".skills__content:nth-child(1) , .contact__content:nth-child(1)", {
   origin: "left",
 });
@@ -221,121 +221,3 @@ sr.reveal(".skills__content:nth-child(2), .contact__content:nth-child(2)", {
   origin: "right",
 });
 sr.reveal(".qualification__content , .services__card", { interval: 100 });
-
-function carousel() {
-  let carouselSlider = document.querySelector(".carousel__slider");
-  let list = document.querySelector(".carousel__list");
-  let item = document.querySelectorAll(".carousel__item");
-  let list2;
-
-  const speed = 0.5;
-
-  const width = list.offsetWidth;
-  let x = 0;
-  let x2 = width;
-
-  function clone() {
-    list2 = list.cloneNode(true);
-    carouselSlider.appendChild(list2);
-    list2.style.left = `${width}px`;
-  }
-
-  function moveFirst() {
-    x -= speed;
-
-    if (width >= Math.abs(x)) {
-      list.style.left = `${x}px`;
-    } else {
-      x = width;
-    }
-  }
-
-  function moveSecond() {
-    x2 -= speed;
-
-    if (list2.offsetWidth >= Math.abs(x2)) {
-      list2.style.left = `${x2}px`;
-    } else {
-      x2 = width;
-    }
-  }
-
-  function hover() {
-    clearInterval(a);
-    clearInterval(b);
-  }
-
-  function unhover() {
-    a = setInterval(moveFirst, 10);
-    b = setInterval(moveSecond, 10);
-  }
-
-  clone();
-
-  let a = setInterval(moveFirst, 10);
-  let b = setInterval(moveSecond, 10);
-
-  carouselSlider.addEventListener("mouseenter", hover);
-  carouselSlider.addEventListener("mouseleave", unhover);
-}
-
-carousel();
-
-function carousel2() {
-  let carouselSlider = document.querySelector(".carousel__slider2");
-  let list = document.querySelector(".carousel__list2");
-  let item = document.querySelectorAll(".carousel__item2");
-  let list2;
-
-  const speed = 0.5;
-
-  const width = list.offsetWidth;
-  let x = 0;
-  let x2 = width;
-
-  function clone() {
-    list2 = list.cloneNode(true);
-    carouselSlider.appendChild(list2);
-    list2.style.left = `${width}px`;
-  }
-
-  function moveFirst() {
-    x -= speed;
-
-    if (width >= Math.abs(x)) {
-      list.style.left = `${x}px`;
-    } else {
-      x = width;
-    }
-  }
-
-  function moveSecond() {
-    x2 -= speed;
-
-    if (list2.offsetWidth >= Math.abs(x2)) {
-      list2.style.left = `${x2}px`;
-    } else {
-      x2 = width;
-    }
-  }
-
-  function hover() {
-    clearInterval(a);
-    clearInterval(b);
-  }
-
-  function unhover() {
-    a = setInterval(moveFirst, 10);
-    b = setInterval(moveSecond, 10);
-  }
-
-  clone();
-
-  let a = setInterval(moveFirst, 10);
-  let b = setInterval(moveSecond, 10);
-
-  carouselSlider.addEventListener("mouseenter", hover);
-  carouselSlider.addEventListener("mouseleave", unhover);
-}
-
-carousel2();
