@@ -305,7 +305,7 @@ body.dark-theme {
   row-gap: 1.5rem;
 }
 
-.home__title {
+.home__judul {
   text-align: center;
   font-size: var(--biggest-font-size);
   letter-spacing: 0.3px;
@@ -1107,7 +1107,7 @@ body.dark-theme {
   .section {
     padding-block: 8rem 0;
   }
-  .home__title {
+  .home__judul {
     font-size: 2.25rem;
   }
   .scrollup {
@@ -1140,7 +1140,7 @@ body.dark-theme {
     margin-bottom: 5rem;
   }
 
-  .home__title {
+  .home__judul {
     font-size: 2rem;
   }
 
